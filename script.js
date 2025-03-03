@@ -4,13 +4,28 @@ const storyText = document.getElementById("story-text");
 const choicesDiv = document.getElementById("choices");
 const storyImage = document.getElementById("story-image");
 
-// Player chooses a class before starting the game
+// Start screen with class selection
+function showClassSelection() {
+    storyText.innerText = "Choose your class:";
+    storyImage.src = "images/class_selection.jpg"; // Add an image for class selection
+    choicesDiv.innerHTML = "";
+
+    const classes = ["Warrior", "Mage", "Healer", "Archer"];
+    classes.forEach(className => {
+        const button = document.createElement("button");
+        button.innerText = className;
+        button.onclick = () => selectClass(className.toLowerCase());
+        choicesDiv.appendChild(button);
+    });
+}
+
+// Set player class and start the game
 function selectClass(chosenClass) {
     playerClass = chosenClass;
     startGame();
 }
 
-// Story structure for each class
+// Story structure
 const story = {
     warrior_start: {
         text: "You are a fearless warrior. You arrive at a crossroads: A dark cave or a mountain pass?",
@@ -27,6 +42,24 @@ const story = {
             { text: "Fight", next: "warrior_fight_beast" },
             { text: "Sneak past", next: "warrior_sneak" }
         ]
+    },
+    warrior_mountain: {
+        text: "As you climb, a rockslide begins. Do you jump to a ledge or brace for impact?",
+        image: "images/mountain.jpg",
+        choices: [
+            { text: "Jump to ledge", next: "warrior_safe" },
+            { text: "Brace for impact", next: "warrior_dead" }
+        ]
+    },
+    warrior_safe: {
+        text: "You make it to the ledge safely and continue towards the enemy castle.",
+        image: "images/castle.jpg",
+        choices: [{ text: "Continue", next: "warrior_final_battle" }]
+    },
+    warrior_dead: {
+        text: "The rockslide crushes you. Game over.",
+        image: "images/death.jpg",
+        choices: [{ text: "Restart", next: "restartGame" }]
     },
     warrior_fight_beast: {
         text: "You fight bravely and defeat the beast, gaining legendary armor!",
@@ -49,12 +82,12 @@ const story = {
     warrior_win: {
         text: "You defeat the warlord and become a legend!",
         image: "images/victory.jpg",
-        choices: [{ text: "Start New Game", next: "start" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     warrior_lose: {
         text: "Your trap backfires, and you're captured. Game over.",
         image: "images/defeat.jpg",
-        choices: [{ text: "Restart", next: "start" }]
+        choices: [{ text: "Restart", next: "restartGame" }]
     },
 
     mage_start: {
@@ -84,12 +117,12 @@ const story = {
     mage_good: {
         text: "You become a legendary guardian of the land!",
         image: "images/mage_good.jpg",
-        choices: [{ text: "Start New Game", next: "start" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_evil: {
         text: "Your dark magic consumes you. Game over.",
         image: "images/mage_evil.jpg",
-        choices: [{ text: "Restart", next: "start" }]
+        choices: [{ text: "Restart", next: "restartGame" }]
     },
 
     healer_start: {
@@ -100,28 +133,15 @@ const story = {
             { text: "Help the villager", next: "healer_villager" }
         ]
     },
-    healer_knight: {
-        text: "The knight is grateful and swears to protect you. Do you travel with him or stay in the village?",
-        image: "images/knight.jpg",
-        choices: [
-            { text: "Travel with knight", next: "healer_adventure" },
-            { text: "Stay in village", next: "healer_stay" }
-        ]
-    },
     healer_villager: {
         text: "The villager was infected with a deadly curse. You get sick and die. Game over.",
         image: "images/curse.jpg",
-        choices: [{ text: "Restart", next: "start" }]
+        choices: [{ text: "Restart", next: "restartGame" }]
     },
-    healer_adventure: {
-        text: "You and the knight discover an ancient relic that heals all wounds. You become a legendary healer!",
+    healer_knight: {
+        text: "The knight is grateful and swears to protect you. You journey together and discover an ancient relic that heals all wounds.",
         image: "images/relic.jpg",
-        choices: [{ text: "Start New Game", next: "start" }]
-    },
-    healer_stay: {
-        text: "You live a peaceful life, healing those in need.",
-        image: "images/village.jpg",
-        choices: [{ text: "Start New Game", next: "start" }]
+        choices: [{ text: "You become a legendary healer!", next: "restartGame" }]
     },
 
     archer_start: {
@@ -140,34 +160,21 @@ const story = {
             { text: "Negotiate", next: "archer_negotiate" }
         ]
     },
-    archer_hide: {
-        text: "The figure was a deadly assassin. You avoided a trap and return home safely.",
-        image: "images/home.jpg",
-        choices: [{ text: "Start New Game", next: "start" }]
-    },
     archer_attack: {
         text: "The rogues overpower you. Game over.",
         image: "images/death.jpg",
-        choices: [{ text: "Restart", next: "start" }]
+        choices: [{ text: "Restart", next: "restartGame" }]
     },
     archer_negotiate: {
         text: "The rogues respect your skill and invite you to join them. You become a master scout.",
         image: "images/rogue_success.jpg",
-        choices: [{ text: "Start New Game", next: "start" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     }
 };
 
-// Start game based on player's class
+// Start game
 function startGame() {
-    if (playerClass === "warrior") {
-        showStory("warrior_start");
-    } else if (playerClass === "mage") {
-        showStory("mage_start");
-    } else if (playerClass === "healer") {
-        showStory("healer_start");
-    } else if (playerClass === "archer") {
-        showStory("archer_start");
-    }
+    showStory(`${playerClass}_start`);
 }
 
 // Display a scene
@@ -184,3 +191,12 @@ function showStory(scene) {
         choicesDiv.appendChild(button);
     });
 }
+
+// Restart game
+function restartGame() {
+    playerClass = "";
+    showClassSelection();
+}
+
+// Start by choosing a class
+showClassSelection();
