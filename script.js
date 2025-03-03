@@ -187,7 +187,13 @@ function showStory(scene) {
     currentScene.choices.forEach(choice => {
         const button = document.createElement("button");
         button.innerText = choice.text;
-        button.onclick = () => showStory(choice.next);
+        button.onclick = () => {
+            if (choice.next === "restartGame") {
+                restartGame();
+            } else {
+                showStory(choice.next);
+            }
+        };
         choicesDiv.appendChild(button);
     });
 }
