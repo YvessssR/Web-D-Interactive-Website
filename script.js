@@ -1,6 +1,13 @@
+let playerClass = "";
+
 const storyText = document.getElementById("story-text");
 const choicesDiv = document.getElementById("choices");
 const storyImage = document.getElementById("story-image");
+
+function selectClass(chosenClass) {
+    playerClass = chosenClass;
+    startGame();
+}
 
 const story = {
     start: {
@@ -46,24 +53,22 @@ const story = {
     correct_riddle: {
         text: "The wizard is impressed and gifts you a magical artifact. Your wisdom will lead you far.",
         image: "images/artifact.jpg",
-        choices: []
+        choices: [{ text: "Start New Game", next: "start" }]
     },
     wrong_riddle: {
         text: "The wizard shakes his head. 'You must learn more before proceeding.' You are sent back to the forest.",
         image: "images/forest.jpg",
-        choices: [
-            { text: "Restart", next: "start" } 
-        ]
+        choices: [{ text: "Restart", next: "start" }]
     },
     brute_force: {
         text: "You overpower the bandit leader but exhaust yourself in the process. Your journey is uncertain.",
         image: "images/battle.jpg",
-        choices: []
+        choices: [{ text: "Start New Game", next: "start" }]
     },
     skill_duel: {
         text: "Using wit and agility, you defeat the bandit and gain the people's respect. A new adventure begins!",
         image: "images/victory.jpg",
-        choices: []
+        choices: [{ text: "Start New Game", next: "start" }]
     },
     fight_dragon: {
         text: "You bravely battle the dragon! What is your tactic?",
@@ -76,17 +81,17 @@ const story = {
     run_away: {
         text: "You flee back to the safety of the forest, but your adventure ends in regret.",
         image: "images/forest.jpg",
-        choices: []
+        choices: [{ text: "Start New Game", next: "start" }]
     },
     dragon_wings: {
         text: "You cripple the dragon's flight and force it to yield. The kingdom is saved!",
         image: "images/dragon_defeated.jpg",
-        choices: []
+        choices: [{ text: "Start New Game", next: "start" }]
     },
     dragon_heart: {
         text: "Your attack is reckless; the dragon retaliates. Your fate is sealed.",
         image: "images/defeat.jpg",
-        choices: []
+        choices: [{ text: "Start New Game", next: "start" }]
     }
 };
 

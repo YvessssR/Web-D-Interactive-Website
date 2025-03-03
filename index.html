@@ -10,8 +10,13 @@
     <div id="game-container">
         <h1>Mythic Quest</h1>
         <img id="story-image" src="images/forest.jpg" alt="Scene Image">
-        <p id="story-text">Loading.........</p>
-        <div id="choices"></div>
+        <p id="story-text">Choose your class:</p>
+        <div id="choices">
+            <button onclick="selectClass('warrior')">Warrior</button>
+            <button onclick="selectClass('mage')">Mage</button>
+            <button onclick="selectClass('healer')">Healer</button>
+            <button onclick="selectClass('archer')">Archer</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
