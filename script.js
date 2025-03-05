@@ -22,7 +22,7 @@ function showClassSelection() {
 // Set player class and start the game
 function selectClass(chosenClass) {
     playerClass = chosenClass;
-    startGame();
+    updateScene(chosenClass + "_start");
 }
 
 // Story structure
