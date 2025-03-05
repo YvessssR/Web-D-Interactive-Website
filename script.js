@@ -106,6 +106,58 @@ const story = {
             { text: "Destroy it", next: "mage_destroy" }
         ]
     },
+
+    mage_destroy: {
+        text: "As you burn the spellbook, dark energy erupts from its pages, unleashing a powerful curse upon you.",
+        image: "images/curse.jpg",
+        choices: [
+            { text: "Try to resist", next: "mage_resist_curse" },
+            { text: "Accept the darkness", next: "mage_dark_transformation" }
+        ]
+    },
+    
+    mage_resist_curse: {
+        text: "You struggle against the overwhelming energy, but it drains your magic permanently. You can no longer cast spells.",
+        image: "images/weak_mage.jpg",
+        choices: [
+            { text: "Continue as a scholar", next: "mage_scholar" },
+            { text: "Retire from magic", next: "mage_retire" }
+        ]
+    },
+    
+    mage_scholar: {
+        text: "You dedicate yourself to studying magic theory, training future generations of mages.",
+        image: "images/scholar.jpg",
+        choices: [{ text: "Start New Game", next: "restart" }]
+    },
+    
+    mage_retire: {
+        text: "You leave the magical world behind and live a peaceful life as a simple historian.",
+        image: "images/retire.jpg",
+        choices: [{ text: "Start New Game", next: "restart" }]
+    },
+    
+    mage_dark_transformation: {
+        text: "You embrace the dark power, transforming into a shadow mage with forbidden knowledge.",
+        image: "images/shadow_mage.jpg",
+        choices: [
+            { text: "Use your power for revenge", next: "mage_revenge" },
+            { text: "Seek control over the darkness", next: "mage_control_darkness" }
+        ]
+    },
+    
+    mage_revenge: {
+        text: "Blinded by vengeance, you unleash destruction upon the world. Eventually, the kingdom hunts you down.",
+        image: "images/dark_overlord.jpg",
+        choices: [{ text: "Game Over", next: "restart" }]
+    },
+    
+    mage_control_darkness: {
+        text: "You learn to harness the dark magic without losing yourself, becoming a powerful protector of the balance.",
+        image: "images/dark_guardian.jpg",
+        choices: [{ text: "Start New Game", next: "restart" }]
+    }
+,    
     mage_learn_spell: {
         text: "You learn a powerful fire spell! But will you use it for good or evil?",
         image: "images/fire_spell.jpg",
