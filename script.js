@@ -128,13 +128,13 @@ const story = {
     mage_scholar: {
         text: "You dedicate yourself to studying magic theory, training future generations of mages.",
         image: "images/scholar.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     
     mage_retire: {
         text: "You leave the magical world behind and live a peaceful life as a simple historian.",
         image: "images/retire.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     
     mage_dark_transformation: {
@@ -149,13 +149,13 @@ const story = {
     mage_revenge: {
         text: "Blinded by vengeance, you unleash destruction upon the world. Eventually, the kingdom hunts you down.",
         image: "images/dark_overlord.jpg",
-        choices: [{ text: "Game Over", next: "restart" }]
+        choices: [{ text: "Game Over", next: "restartGame" }]
     },
     
     mage_control_darkness: {
         text: "You learn to harness the dark magic without losing yourself, becoming a powerful protector of the balance.",
         image: "images/dark_guardian.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     }
 ,    
     mage_learn_spell: {
