@@ -188,14 +188,53 @@ const story = {
         ]
     },
     healer_villager: {
-        text: "The villager was infected with a deadly curse. You get sick and die. Game over.",
+        text: "The villager is cursed! You have a short time to find a cure. Do you seek herbs or perform a ritual?",
         image: "images/curse.jpg",
+        choices: [
+            { text: "Seek herbs", next: "healer_herbs" },
+            { text: "Perform a ritual", next: "healer_ritual" }
+        ]
+    },
+    healer_herbs: {
+        text: "The herbs are ineffective. The curse spreads to you. Game over.",
+        image: "images/death.jpg",
         choices: [{ text: "Restart", next: "restartGame" }]
     },
+    healer_ritual: {
+        text: "The ritual is successful! The villager is saved and gifts you a rare potion.",
+        image: "images/success.jpg",
+        choices: [{ text: "Continue", next: "healer_relic" }]
+    },
     healer_knight: {
-        text: "The knight is grateful and swears to protect you. You journey together and discover an ancient relic that heals all wounds.",
+        text: "The knight is grateful and swears loyalty to you. He offers two paths: join him on a battle mission or focus on healing others.",
+        image: "images/knight.jpg",
+        choices: [
+            { text: "Join battle mission", next: "healer_battle" },
+            { text: "Focus on healing", next: "healer_relic" }
+        ]
+    },
+    healer_battle: {
+        text: "In battle, your healing saves many lives. You are honored as the royal healer!",
+        image: "images/victory.jpg",
+        choices: [{ text: "Start New Game", next: "restartGame" }]
+    },
+    healer_relic: {
+        text: "You discover an ancient relic! To unlock its power, you must solve a mystical riddle. Do you attempt it?",
         image: "images/relic.jpg",
-        choices: [{ text: "You become a legendary healer!", next: "restartGame" }]
+        choices: [
+            { text: "Solve the riddle", next: "healer_riddle" },
+            { text: "Ignore and move on", next: "healer_ignore" }
+        ]
+    },
+    healer_riddle: {
+        text: "You solve the riddle and the relic grants you divine healing powers! You become a legendary healer.",
+        image: "images/legendary_healer.jpg",
+        choices: [{ text: "Start New Game", next: "restartGame" }]
+    },
+    healer_ignore: {
+        text: "Without unlocking its power, the relic fades. You continue your journey as a skilled but mortal healer.",
+        image: "images/healer_path.jpg",
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
 
     archer_start: {
