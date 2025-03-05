@@ -2,7 +2,7 @@ let playerClass = "";
 
 const storyText = document.getElementById("story-text");
 const choicesDiv = document.getElementById("choices");
-//const storyImage = document.getElementById("story-image");
+const storyImage = document.getElementById("story-image");
 
 // Start screen with class selection
 function showClassSelection() {
@@ -22,6 +22,7 @@ function showClassSelection() {
 // Set player class and start the game
 function selectClass(chosenClass) {
     playerClass = chosenClass;
+    startGame();
 }
 
 // Story structure
@@ -591,6 +592,11 @@ function startGame() {
 
 // Display a scene
 function showStory(scene) {
+    if (!story[scene]) {
+        console.error(`Scene "${scene}" not found!`);
+        return;
+    }
+
     const currentScene = story[scene];
     storyText.innerText = currentScene.text;
     storyImage.src = currentScene.image;
@@ -600,11 +606,7 @@ function showStory(scene) {
         const button = document.createElement("button");
         button.innerText = choice.text;
         button.onclick = () => {
-            if (choice.next === "restartGame") {
-                restartGame();
-            } else {
-                showStory(choice.next);
-            }
+            showStory(choice.next);
         };
         choicesDiv.appendChild(button);
     });
@@ -618,3 +620,5 @@ function restartGame() {
 
 // Start by choosing a class
 showClassSelection();
+
+window.selectClass = selectClass;
