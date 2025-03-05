@@ -592,11 +592,6 @@ function startGame() {
 
 // Display a scene
 function showStory(scene) {
-    if (!story[scene]) {
-        console.error(`Scene "${scene}" not found!`);
-        return;
-    }
-
     const currentScene = story[scene];
     storyText.innerText = currentScene.text;
     storyImage.src = currentScene.image;
@@ -606,7 +601,11 @@ function showStory(scene) {
         const button = document.createElement("button");
         button.innerText = choice.text;
         button.onclick = () => {
-            showStory(choice.next);
+            if (choice.next === "restartGame") {
+                restartGame();
+            } else {
+                showStory(choice.next);
+            }
         };
         choicesDiv.appendChild(button);
     });
