@@ -10,8 +10,6 @@ body {
     overflow: hidden;
 }
 
-
-
 /* Animated Title */
 h1 {
     font-family: 'Cinzel Decorative', serif;
@@ -44,15 +42,36 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
     animation: fadeInUp 1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glowing metallic blue effect */
+button::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, #00aaff, #0077ff);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 button:hover {
-    background: linear-gradient(90deg, #666, #888);
+    background: linear-gradient(90deg, #0055aa, #0088ff);
     transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 15px rgba(0, 136, 255, 0.6);
+}
+
+button:hover::before {
+    opacity: 1;
 }
 
 /* Animations */
