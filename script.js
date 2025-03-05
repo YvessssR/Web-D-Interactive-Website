@@ -117,12 +117,12 @@ const story = {
     mage_good: {
         text: "You become a legendary guardian of the land!",
         image: "images/mage_good.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_evil: {
         text: "Your dark magic consumes you. Game over.",
         image: "images/mage_evil.jpg",
-        choices: [{ text: "Restart", next: "restart" }]
+        choices: [{ text: "Restart", next: "restartGame" }]
     },
     mage_altar: {
         text: "At the altar, you feel a strange energy. A spirit appears, offering you wisdom or power.",
@@ -153,12 +153,12 @@ const story = {
     mage_warn_kingdom: {
         text: "The kingdom heeds your warning and prepares for the disaster, crowning you as their advisor.",
         image: "images/kingdom.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_seeker: {
         text: "You travel the lands searching for deeper truths, uncovering lost civilizations.",
         image: "images/seeker.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_dark_path: {
         text: "You grow in power, but your heart turns cold. Will you seek redemption or embrace the darkness?",
@@ -171,12 +171,12 @@ const story = {
     mage_redemption: {
         text: "You struggle to undo the harm you've done, becoming a hero of the fallen.",
         image: "images/redemption.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_overlord: {
         text: "You conquer the lands, ruling with fear and might. The world is yours.",
         image: "images/overlord.jpg",
-        choices: [{ text: "Start New Game", next: "restart" }]
+        choices: [{ text: "Start New Game", next: "restartGame" }]
     },
 
     healer_start: {
