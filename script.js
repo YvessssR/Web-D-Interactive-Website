@@ -117,12 +117,66 @@ const story = {
     mage_good: {
         text: "You become a legendary guardian of the land!",
         image: "images/mage_good.jpg",
-        choices: [{ text: "Start New Game", next: "restartGame" }]
+        choices: [{ text: "Start New Game", next: "restart" }]
     },
     mage_evil: {
         text: "Your dark magic consumes you. Game over.",
         image: "images/mage_evil.jpg",
-        choices: [{ text: "Restart", next: "restartGame" }]
+        choices: [{ text: "Restart", next: "restart" }]
+    },
+    mage_altar: {
+        text: "At the altar, you feel a strange energy. A spirit appears, offering you wisdom or power.",
+        image: "images/altar.jpg",
+        choices: [
+            { text: "Accept wisdom", next: "mage_wisdom" },
+            { text: "Accept power", next: "mage_power" }
+        ]
+    },
+    mage_wisdom: {
+        text: "You gain knowledge of the world's secrets, unlocking hidden paths in your journey.",
+        image: "images/wisdom.jpg",
+        choices: [{ text: "Continue", next: "mage_prophecy" }]
+    },
+    mage_power: {
+        text: "Dark energy courses through you, increasing your strength but corrupting your mind.",
+        image: "images/dark_power.jpg",
+        choices: [{ text: "Continue", next: "mage_dark_path" }]
+    },
+    mage_prophecy: {
+        text: "A vision of the future warns you of a great calamity. Will you act on it?",
+        image: "images/prophecy.jpg",
+        choices: [
+            { text: "Warn the kingdom", next: "mage_warn_kingdom" },
+            { text: "Seek more knowledge", next: "mage_seeker" }
+        ]
+    },
+    mage_warn_kingdom: {
+        text: "The kingdom heeds your warning and prepares for the disaster, crowning you as their advisor.",
+        image: "images/kingdom.jpg",
+        choices: [{ text: "Start New Game", next: "restart" }]
+    },
+    mage_seeker: {
+        text: "You travel the lands searching for deeper truths, uncovering lost civilizations.",
+        image: "images/seeker.jpg",
+        choices: [{ text: "Start New Game", next: "restart" }]
+    },
+    mage_dark_path: {
+        text: "You grow in power, but your heart turns cold. Will you seek redemption or embrace the darkness?",
+        image: "images/dark_path.jpg",
+        choices: [
+            { text: "Seek redemption", next: "mage_redemption" },
+            { text: "Embrace darkness", next: "mage_overlord" }
+        ]
+    },
+    mage_redemption: {
+        text: "You struggle to undo the harm you've done, becoming a hero of the fallen.",
+        image: "images/redemption.jpg",
+        choices: [{ text: "Start New Game", next: "restart" }]
+    },
+    mage_overlord: {
+        text: "You conquer the lands, ruling with fear and might. The world is yours.",
+        image: "images/overlord.jpg",
+        choices: [{ text: "Start New Game", next: "restart" }]
     },
 
     healer_start: {
