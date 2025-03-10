@@ -241,7 +241,7 @@ const story = {
     },
     healer_villager: {
         text: "The villager is cursed! You have a short time to find a cure. Do you seek herbs or perform a ritual?",
-        image: "",
+        image: "./images/healervillage.jpg",
         choices: [
             { text: "Seek herbs", next: "healer_herbs" },
             { text: "Perform a ritual", next: "healer_ritual" }
