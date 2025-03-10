@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    cursor: url('https://cur.cursors-4u.net/swords/swo25.cur'), auto;
+    overflow: hidden;
+}
+
+/* Game Container */
+#game-container {
+    max-width: 600px;
+    margin: auto;
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+/* Animated Title */
+h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    animation: glow 2s infinite alternate;
+}
+
+/* Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png'), linear-gradient(to bottom, #2e7d32, #1b5e20);
+    z-index: -1;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(90deg, #444, #666);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #666, #888);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
