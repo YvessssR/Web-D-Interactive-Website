@@ -7,7 +7,7 @@ body {
     color: white;
     padding: 20px;
     cursor: url('https://cur.cursors-4u.net/swords/swo25.cur'), auto;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Animated Title */
@@ -59,8 +59,8 @@ button::before {
     bottom: -2px;
     background: linear-gradient(90deg, #00aaff, #0077ff);
     z-index: -1;
-    filter: blur(10px);
-    opacity: 0;
+    filter: blur(8px);
+    opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -105,3 +105,20 @@ button:hover::before {
         text-shadow: 0 0 20px rgba(255, 255, 255, 1);
     }
 }
+#story-image {
+    width: 100%;
+    max-width: 700px; /* Adjust based on your preferred limit */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Centering the image */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Adds depth */
+}
+#game-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+

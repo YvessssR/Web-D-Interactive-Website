@@ -249,7 +249,7 @@ const story = {
     },
     healer_herbs: {
         text: "The herbs are ineffective. The curse spreads to you. Game over.",
-        image: "images/death.jpg",
+        image: "./images/healerherbs.jpg",
         choices: [{ text: "Restart", next: "restartGame" }]
     },
     healer_ritual: {
