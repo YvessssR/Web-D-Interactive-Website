@@ -2,7 +2,7 @@ let playerClass = "";
 
 const storyText = document.getElementById("story-text");
 const choicesDiv = document.getElementById("choices");
-const storyImage = document.getElementById("story-image");
+//const storyImage = document.getElementById("story-image");
 
 // Start screen with class selection
 function showClassSelection() {
@@ -106,6 +106,58 @@ const story = {
             { text: "Destroy it", next: "mage_destroy" }
         ]
     },
+
+    mage_destroy: {
+        text: "As you burn the spellbook, dark energy erupts from its pages, unleashing a powerful curse upon you.",
+        image: "images/curse.jpg",
+        choices: [
+            { text: "Try to resist", next: "mage_resist_curse" },
+            { text: "Accept the darkness", next: "mage_dark_transformation" }
+        ]
+    },
+    
+    mage_resist_curse: {
+        text: "You struggle against the overwhelming energy, but it drains your magic permanently. You can no longer cast spells.",
+        image: "images/weak_mage.jpg",
+        choices: [
+            { text: "Continue as a scholar", next: "mage_scholar" },
+            { text: "Retire from magic", next: "mage_retire" }
+        ]
+    },
+    
+    mage_scholar: {
+        text: "You dedicate yourself to studying magic theory, training future generations of mages.",
+        image: "images/scholar.jpg",
+        choices: [{ text: "Start New Game", next: "restartGame" }]
+    },
+    
+    mage_retire: {
+        text: "You leave the magical world behind and live a peaceful life as a simple historian.",
+        image: "images/retire.jpg",
+        choices: [{ text: "Start New Game", next: "restartGame" }]
+    },
+    
+    mage_dark_transformation: {
+        text: "You embrace the dark power, transforming into a shadow mage with forbidden knowledge.",
+        image: "images/shadow_mage.jpg",
+        choices: [
+            { text: "Use your power for revenge", next: "mage_revenge" },
+            { text: "Seek control over the darkness", next: "mage_control_darkness" }
+        ]
+    },
+    
+    mage_revenge: {
+        text: "Blinded by vengeance, you unleash destruction upon the world. Eventually, the kingdom hunts you down.",
+        image: "images/dark_overlord.jpg",
+        choices: [{ text: "Game Over", next: "restartGame" }]
+    },
+    
+    mage_control_darkness: {
+        text: "You learn to harness the dark magic without losing yourself, becoming a powerful protector of the balance.",
+        image: "images/dark_guardian.jpg",
+        choices: [{ text: "Start New Game", next: "restartGame" }]
+    }
+,    
     mage_learn_spell: {
         text: "You learn a powerful fire spell! But will you use it for good or evil?",
         image: "images/fire_spell.jpg",
@@ -238,349 +290,223 @@ const story = {
     },
 
     archer_start: {
-        text: "You are a skilled archer. You see a mysterious figure in the forest. Do you follow them or hide?",
-        image: "images/forest_archer.jpg",
+        text: "You spot a mysterious figure in the forest. What do you do?",
         choices: [
-            { text: "Follow them", next: "archer_follow" },
+            { text: "Follow", next: "archer_follow" },
             { text: "Hide", next: "archer_hide" },
-            { text: "Call out to them", next: "archer_call" },
-            { text: "Look around", next: "archer_easter_egg1" }
+            { text: "Call out", next: "archer_call" }
         ]
     },
     archer_follow: {
-        text: "You discover a hidden camp of rogues. Do you attack or negotiate?",
-        image: "images/rogues.jpg",
+        text: "You find a rogue camp. Attack or negotiate?",
         choices: [
             { text: "Attack", next: "archer_attack" },
-            { text: "Negotiate", next: "archer_negotiate" },
-            { text: "Spy longer", next: "archer_spy" }
+            { text: "Negotiate", next: "archer_negotiate" }
         ]
     },
     archer_hide: {
-        text: "While hiding, you overhear the figure talking about a royal treasure map. Do you steal it or report to the guards?",
-        image: "images/hiding.jpg",
+        text: "You overhear a treasure map plot. Steal it or report it?",
         choices: [
-            { text: "Steal the map", next: "archer_steal" },
-            { text: "Report to the guards", next: "archer_report" },
-            { text: "Blackmail them", next: "archer_blackmail" }
-        ]
-    },
-    archer_easter_egg1: {
-        text: "You find a strange carving on a tree. It glows when you touch it, revealing an ancient hidden path.",
-        image: "images/glowing_tree.jpg",
-        choices: [
-            { text: "Enter the path", next: "archer_secret_realm" },
-            { text: "Ignore it", next: "archer_start" }
-        ]
-    },
-    archer_secret_realm: {
-        text: "You step into a mystical realm where time moves differently. A shadowy figure approaches...",
-        image: "images/mystic_realm.jpg",
-        choices: [
-            { text: "Speak to the figure", next: "archer_mystic_talk" },
-            { text: "Run away", next: "archer_escape_realm" }
-        ]
-    },
-    archer_mystic_talk: {
-        text: "The figure reveals themselves as an ancient archer spirit. They offer to train you in forgotten skills.",
-        image: "images/archer_spirit.jpg",
-        choices: [
-            { text: "Accept training", next: "archer_legend_training" },
-            { text: "Decline and leave", next: "archer_start" }
-        ]
-    },
-    archer_legend_training: {
-        text: "You undergo rigorous training and awaken with enhanced abilities. You are now a true legend.",
-        image: "images/legend_archer.jpg",
-        choices: [
-            { text: "Return to the real world", next: "archer_start" }
-        ]
-    },
-    archer_escape_realm: {
-        text: "You attempt to flee, but the realm shifts around you. You find yourself back at the forest clearing, as if nothing happened.",
-        image: "images/confused.jpg",
-        choices: [
-            { text: "Continue your journey", next: "archer_start" }
-        ]
-    },
-    archer_report: {
-        text: "You inform the guards, who reward you for your honesty. However, the figure escapes. Do you track them down?",
-        image: "images/report.jpg",
-        choices: [
-            { text: "Track them", next: "archer_track" },
-            { text: "Move on", next: "archer_move_on" }
+            { text: "Steal", next: "archer_steal" },
+            { text: "Report", next: "archer_report" }
         ]
     },
     archer_call: {
-        text: "The figure turns out to be an elven messenger in distress. They need help delivering an urgent message to the Fairy Queen.",
-        image: "images/elf_messenger.jpg",
+        text: "The figure is an elf needing help. Assist or demand payment?",
         choices: [
-            { text: "Offer help", next: "archer_help_elf" },
-            { text: "Demand payment", next: "archer_demand_payment" }
-        ]
-    },
-    archer_demand_payment: {
-        text: "The elf refuses and vanishes into the forest. You lose the opportunity to gain favor with the Fairy Queen.",
-        image: "images/empty_forest.jpg",
-        choices: [
-            { text: "Move on", next: "archer_move_on" }
-        ]
-    },
-    archer_move_on: {
-        text: "You decide to continue your own journey, leaving the past behind.",
-        image: "images/journey.jpg",
-        choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Help", next: "archer_help_elf" },
+            { text: "Demand payment", next: "archer_move_on" }
         ]
     },
     archer_attack: {
-        text: "You attack the rogues, but they outnumber you. Do you fight to the end or retreat?",
-        image: "images/rogue_attack.jpg",
+        text: "You attack but are outnumbered. Fight or retreat?",
         choices: [
-            { text: "Fight to the end", next: "archer_heroic_death" },
+            { text: "Fight", next: "archer_heroic_death" },
             { text: "Retreat", next: "archer_retreat" }
         ]
     },
     archer_heroic_death: {
-        text: "You fight valiantly but are overwhelmed. Your bravery is remembered in songs for generations.",
-        image: "images/heroic_death.jpg",
+        text: "You die bravely, remembered in songs.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
     archer_retreat: {
-        text: "You retreat and regroup, planning your next move carefully.",
-        image: "images/retreat.jpg",
+        text: "You retreat and plan your next move.",
         choices: [
-            { text: "Plan an ambush", next: "archer_ambush" },
-            { text: "Seek reinforcements", next: "archer_reinforcements" }
+            { text: "Ambush", next: "archer_ambush" },
+            { text: "Seek help", next: "archer_reinforcements" }
         ]
     },
     archer_ambush: {
-        text: "Your ambush is successful! The rogues are defeated, and you recover the stolen treasure.",
-        image: "images/ambush_success.jpg",
+        text: "You ambush the rogues and recover treasure.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
     archer_reinforcements: {
-        text: "You bring reinforcements, but the rogues have fled. However, you secure the area and gain the trust of the townsfolk.",
-        image: "images/reinforcements.jpg",
+        text: "You secure the area with reinforcements.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
     archer_negotiate: {
-        text: "You negotiate with the rogues, offering to share the treasure in exchange for information.",
-        image: "images/negotiate.jpg",
+        text: "You negotiate with the rogues for treasure.",
         choices: [
-            { text: "Accept their deal", next: "archer_deal" },
-            { text: "Betray them", next: "archer_betray" }
+            { text: "Accept deal", next: "archer_deal" },
+            { text: "Betray", next: "archer_betray" }
         ]
     },
     archer_deal: {
-        text: "The rogues honor the deal, and you gain valuable information about a hidden artifact.",
-        image: "images/deal.jpg",
+        text: "You gain info about a hidden artifact.",
         choices: [
-            { text: "Search for the artifact", next: "archer_artifact" }
+            { text: "Search for artifact", next: "archer_artifact" }
         ]
     },
     archer_betray: {
-        text: "You betray the rogues, but they were prepared. A fierce battle ensues.",
-        image: "images/betrayal.jpg",
+        text: "You betray the rogues, leading to a battle.",
         choices: [
             { text: "Fight", next: "archer_heroic_death" },
             { text: "Flee", next: "archer_retreat" }
         ]
     },
     archer_artifact: {
-        text: "You find the hidden artifact, a bow of immense power. With it, you become an unstoppable force.",
-        image: "images/artifact_bow.jpg",
+        text: "You find a powerful bow, becoming unstoppable.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
-        ]
-    },
-    archer_spy: {
-        text: "You spy on the rogues longer, learning of their plans to attack a nearby village.",
-        image: "images/spy.jpg",
-        choices: [
-            { text: "Warn the village", next: "archer_warn_village" },
-            { text: "Set a trap", next: "archer_trap" }
-        ]
-    },
-    archer_warn_village: {
-        text: "The village prepares and repels the attack. You are hailed as a savior.",
-        image: "images/village_saved.jpg",
-        choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
-        ]
-    },
-    archer_trap: {
-        text: "You set a trap for the rogues, capturing their leader and ending their threat.",
-        image: "images/trap_success.jpg",
-        choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
     archer_steal: {
-        text: "You steal the map, but the figure notices and chases you. Do you fight or flee?",
-        image: "images/steal_map.jpg",
+        text: "You steal the map but are chased. Fight or flee?",
         choices: [
             { text: "Fight", next: "archer_fight_figure" },
             { text: "Flee", next: "archer_flee" }
         ]
     },
     archer_fight_figure: {
-        text: "You defeat the figure, but the map is damaged in the fight. Only part of it is readable.",
-        image: "images/damaged_map.jpg",
+        text: "You defeat the figure but damage the map.",
         choices: [
-            { text: "Follow the map", next: "archer_follow_map" },
-            { text: "Abandon the map", next: "archer_move_on" }
+            { text: "Follow map", next: "archer_follow_map" },
+            { text: "Abandon", next: "archer_move_on" }
         ]
     },
     archer_follow_map: {
-        text: "The map leads you to a hidden treasure, but it's guarded by a fierce creature.",
-        image: "images/treasure_guardian.jpg",
+        text: "The map leads to treasure guarded by a creature.",
         choices: [
-            { text: "Fight the guardian", next: "archer_fight_guardian" },
+            { text: "Fight", next: "archer_fight_guardian" },
             { text: "Sneak past", next: "archer_sneak_past" }
         ]
     },
     archer_fight_guardian: {
-        text: "You defeat the guardian and claim the treasure, becoming rich and famous.",
-        image: "images/treasure_victory.jpg",
+        text: "You defeat the guardian and claim the treasure.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
     archer_sneak_past: {
-        text: "You sneak past the guardian and take the treasure, but the guardian awakens and chases you.",
-        image: "images/sneak_past.jpg",
+        text: "You sneak past but awaken the guardian.",
         choices: [
             { text: "Fight", next: "archer_fight_guardian" },
             { text: "Run", next: "archer_run" }
         ]
     },
     archer_run: {
-        text: "You escape with the treasure, but the guardian's roar alerts nearby bandits.",
-        image: "images/run.jpg",
+        text: "You escape but alert bandits.",
         choices: [
-            { text: "Fight the bandits", next: "archer_fight_bandits" },
+            { text: "Fight", next: "archer_fight_bandits" },
             { text: "Hide", next: "archer_hide_from_bandits" }
         ]
     },
     archer_fight_bandits: {
-        text: "You defeat the bandits and secure the treasure, but you are badly wounded.",
-        image: "images/fight_bandits.jpg",
+        text: "You defeat the bandits but are wounded.",
         choices: [
             { text: "Seek healing", next: "archer_seek_healing" },
-            { text: "Continue wounded", next: "archer_wounded_journey" }
+            { text: "Continue", next: "archer_wounded_journey" }
         ]
     },
     archer_seek_healing: {
-        text: "You find a healer who tends to your wounds. You recover fully and continue your journey.",
-        image: "images/healing.jpg",
+        text: "You heal and continue your journey.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
     archer_wounded_journey: {
-        text: "You press on despite your wounds, but they slow you down. You eventually recover, but the journey is long and arduous.",
-        image: "images/wounded_journey.jpg",
+        text: "You press on wounded, recovering slowly.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
     archer_hide_from_bandits: {
-        text: "You hide from the bandits, but they find your trail. You must fight or flee.",
-        image: "images/hide_from_bandits.jpg",
+        text: "You hide but are found. Fight or flee?",
         choices: [
             { text: "Fight", next: "archer_fight_bandits" },
             { text: "Flee", next: "archer_flee_from_bandits" }
         ]
     },
     archer_flee_from_bandits: {
-        text: "You flee from the bandits, losing the treasure but saving your life.",
-        image: "images/flee_from_bandits.jpg",
+        text: "You flee, losing the treasure but surviving.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
         ]
     },
-    archer_blackmail: {
-        text: "You attempt to blackmail the figure, but they are a skilled negotiator. They offer you a deal: join them or face their wrath.",
-        image: "images/blackmail.jpg",
+    archer_report: {
+        text: "You report to guards, but the figure escapes.",
         choices: [
-            { text: "Join them", next: "archer_join_rogues" },
-            { text: "Refuse", next: "archer_refuse_deal" }
-        ]
-    },
-    archer_join_rogues: {
-        text: "You join the rogues, becoming a feared outlaw. Your life takes a dark turn.",
-        image: "images/join_rogues.jpg",
-        choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
-        ]
-    },
-    archer_refuse_deal: {
-        text: "You refuse the deal, and the figure attacks you. A fierce battle ensues.",
-        image: "images/refuse_deal.jpg",
-        choices: [
-            { text: "Fight", next: "archer_fight_figure" },
-            { text: "Flee", next: "archer_flee" }
-        ]
-    },
-    archer_help_elf: {
-        text: "You help the elf deliver the message to the Fairy Queen. She rewards you with a magical bow.",
-        image: "images/fairy_queen.jpg",
-        choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Track", next: "archer_track" },
+            { text: "Move on", next: "archer_move_on" }
         ]
     },
     archer_track: {
-        text: "You track the figure to their hideout. Do you confront them or report to the guards?",
-        image: "images/track.jpg",
+        text: "You track the figure to their hideout. Confront or report?",
         choices: [
-            { text: "Confront them", next: "archer_confront" },
-            { text: "Report to the guards", next: "archer_report_guards" }
+            { text: "Confront", next: "archer_confront" },
+            { text: "Report", next: "archer_report_guards" }
         ]
     },
     archer_confront: {
-        text: "You confront the figure, who turns out to be a rogue mage. A battle ensues.",
-        image: "images/confront_mage.jpg",
+        text: "You confront a rogue mage. Fight or negotiate?",
         choices: [
             { text: "Fight", next: "archer_fight_mage" },
             { text: "Negotiate", next: "archer_negotiate_mage" }
         ]
     },
     archer_fight_mage: {
-        text: "You defeat the mage, but the battle leaves you weakened.",
-        image: "images/fight_mage.jpg",
+        text: "You defeat the mage but are weakened.",
         choices: [
             { text: "Seek healing", next: "archer_seek_healing" },
-            { text: "Continue wounded", next: "archer_wounded_journey" }
+            { text: "Continue", next: "archer_wounded_journey" }
         ]
     },
     archer_negotiate_mage: {
-        text: "You negotiate with the mage, who offers you a powerful artifact in exchange for your silence.",
-        image: "images/negotiate_mage.jpg",
+        text: "The mage offers an artifact for your silence.",
         choices: [
-            { text: "Accept the artifact", next: "archer_artifact" },
+            { text: "Accept", next: "archer_artifact" },
             { text: "Refuse", next: "archer_refuse_mage" }
         ]
     },
     archer_refuse_mage: {
-        text: "You refuse the mage's offer, and they attack you.",
-        image: "images/refuse_mage.jpg",
+        text: "You refuse, and the mage attacks.",
         choices: [
             { text: "Fight", next: "archer_fight_mage" },
             { text: "Flee", next: "archer_flee" }
         ]
     },
     archer_report_guards: {
-        text: "You report the hideout to the guards, who raid it successfully. You are rewarded for your help.",
-        image: "images/report_guards.jpg",
+        text: "You report the hideout, and the guards raid it.",
         choices: [
-            { text: "Return to Class Selection", next: "restartGame" }
+            { text: "Restart", next: "restartGame" }
+        ]
+    },
+    archer_help_elf: {
+        text: "You help the elf and are rewarded with a magical bow.",
+        choices: [
+            { text: "Restart", next: "restartGame" }
+        ]
+    },
+    archer_move_on: {
+        text: "You continue your journey.",
+        choices: [
+            { text: "Restart", next: "restartGame" }
         ]
     }
 };
@@ -619,3 +545,5 @@ function restartGame() {
 
 // Start by choosing a class
 showClassSelection();
+
+window.selectClass = selectClass;
