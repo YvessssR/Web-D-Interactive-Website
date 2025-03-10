@@ -2,7 +2,7 @@ let playerClass = "";
 
 const storyText = document.getElementById("story-text");
 const choicesDiv = document.getElementById("choices");
-//const storyImage = document.getElementById("story-image");
+const storyImage = document.getElementById("story-image");
 
 // Start screen with class selection
 function showClassSelection() {
