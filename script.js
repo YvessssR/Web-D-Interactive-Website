@@ -267,6 +267,10 @@ const story = {
 
 // Start game
 function startGame() {
+    if (!playerClass) {
+        console.error("Player class is not set.");
+        return;
+    }
     showStory(`${playerClass}_start`);
 }
 
