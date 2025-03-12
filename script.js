@@ -45,7 +45,7 @@ const story = {
     },
     warrior_mountain: {
         text: "As you climb, a rockslide begins. Do you jump to a ledge or brace for impact?",
-        image: "images/mountain.jpg",
+        image: "./images/warriormountain.jpg",
         choices: [
             { text: "Jump to ledge", next: "warrior_safe" },
             { text: "Brace for impact", next: "warrior_dead" }
@@ -53,12 +53,12 @@ const story = {
     },
     warrior_safe: {
         text: "You make it to the ledge safely and continue towards the enemy castle.",
-        image: "images/castle.jpg",
+        image: "./images/warriorcastlesafe.jpg",
         choices: [{ text: "Continue", next: "warrior_final_battle" }]
     },
     warrior_dead: {
         text: "The rockslide crushes you. Game over.",
-        image: "images/death.jpg",
+        image: "./images/warriordead.jpg",
         choices: [{ text: "Restart", next: "restartGame" }]
     },
     warrior_fight_beast: {
@@ -68,7 +68,7 @@ const story = {
     },
     warrior_sneak: {
         text: "You successfully sneak past but lose your sword in the process.",
-        image: "images/lost_sword.jpg",
+        image: "./images/warriorlostsword.jpg",
         choices: [{ text: "Continue", next: "warrior_final_battle" }]
     },
     warrior_final_battle: {
@@ -86,7 +86,7 @@ const story = {
     },
     warrior_lose: {
         text: "Your trap backfires, and you're captured. Game over.",
-        image: "images/defeat.jpg",
+        image: "./images/warriortrap.jpg",
         choices: [{ text: "Restart", next: "restartGame" }]
     },
 
