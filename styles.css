@@ -107,7 +107,7 @@ button:hover::before {
 }
 #story-image {
     width: 100%;
-    max-width: 700px; /* Adjust based on your preferred limit */
+    max-width: 500px; /* Adjust based on your preferred limit */
     height: auto;
     display: block;
     margin: 20px auto; /* Centering the image */

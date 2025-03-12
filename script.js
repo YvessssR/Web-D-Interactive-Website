@@ -29,7 +29,7 @@ function selectClass(chosenClass) {
 const story = {
     warrior_start: {
         text: "You are a fearless warrior. You arrive at a crossroads: A dark cave or a mountain pass?",
-        image: "images/crossroads.jpg",
+        image: "./images/warriorstart.jpg",
         choices: [
             { text: "Enter the cave", next: "warrior_cave" },
             { text: "Climb the mountain", next: "warrior_mountain" }
@@ -37,7 +37,7 @@ const story = {
     },
     warrior_cave: {
         text: "Inside the cave, you see a sleeping beast. Do you fight or sneak past?",
-        image: "images/beast.jpg",
+        image: "./images/warriorbeast.jpg",
         choices: [
             { text: "Fight", next: "warrior_fight_beast" },
             { text: "Sneak past", next: "warrior_sneak" }
@@ -63,7 +63,7 @@ const story = {
     },
     warrior_fight_beast: {
         text: "You fight bravely and defeat the beast, gaining legendary armor!",
-        image: "images/armor.jpg",
+        image: "./images/warriorfight.jpg",
         choices: [{ text: "Continue", next: "warrior_final_battle" }]
     },
     warrior_sneak: {
@@ -73,7 +73,7 @@ const story = {
     },
     warrior_final_battle: {
         text: "You reach the enemy castle. Will you challenge the warlord or set a trap?",
-        image: "images/castle.jpg",
+        image: "./images/warriorfinalbattle.jpg",
         choices: [
             { text: "Challenge warlord", next: "warrior_win" },
             { text: "Set trap", next: "warrior_lose" }
@@ -81,7 +81,7 @@ const story = {
     },
     warrior_win: {
         text: "You defeat the warlord and become a legend!",
-        image: "images/victory.jpg",
+        image: "./images/warriorwin.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     warrior_lose: {
