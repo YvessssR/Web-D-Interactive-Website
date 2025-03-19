@@ -89,10 +89,10 @@ const story = {
         image: "./images/warriortrap.jpg",
         choices: [{ text: "Restart", next: "restartGame" }]
     },
-
+// part ni thomas
     mage_start: {
         text: "You are a wise mage. You enter a ruined temple filled with magical energy. Do you explore the library or the altar?",
-        image: "./images/temple.jpg",
+        image: "./images/mage_start.jpg",
         choices: [
             { text: "Library", next: "mage_library" },
             { text: "Altar", next: "mage_altar" }
@@ -100,7 +100,7 @@ const story = {
     },
     mage_library: {
         text: "You find an ancient spellbook. What do you do?",
-        image: "./images/spellbook.jpg",
+        image: "./images/mage_found_book.jpg",
         choices: [
             { text: "Read it", next: "mage_learn_spell" },
             { text: "Destroy it", next: "mage_destroy" }
@@ -108,7 +108,7 @@ const story = {
     },
     mage_destroy: {
         text: "As you burn the spellbook, dark energy erupts from its pages, unleashing a powerful curse upon you.",
-        image: "./images/curse.jpg",
+        image: "./images/mage-burned-book.jpg",
         choices: [
             { text: "Try to resist", next: "mage_resist_curse" },
             { text: "Accept the darkness", next: "mage_dark_transformation" }
@@ -116,7 +116,7 @@ const story = {
     },
     mage_resist_curse: {
         text: "You struggle against the overwhelming energy, but it drains your magic permanently. You can no longer cast spells.",
-        image: "./images/weak_mage.jpg",
+        image: "./images/resisting-mage-curse.jpg",
         choices: [
             { text: "Continue as a scholar", next: "mage_scholar" },
             { text: "Retire from magic", next: "mage_retire" }
@@ -124,17 +124,17 @@ const story = {
     },
     mage_scholar: {
         text: "You dedicate yourself to studying magic theory, training future generations of mages.",
-        image: "./images/scholar.jpg",
+        image: "./images/scholar-mage.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_retire: {
         text: "You leave the magical world behind and live a peaceful life as a simple historian.",
-        image: "./images/retire.jpg",
+        image: "./images/mage-retire.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_dark_transformation: {
         text: "You embrace the dark power, transforming into a shadow mage with forbidden knowledge.",
-        image: "./images/shadow_mage.jpg",
+        image: "./images/embrace-dark.jpg",
         choices: [
             { text: "Use your power for revenge", next: "mage_revenge" },
             { text: "Seek control over the darkness", next: "mage_control_darkness" }
@@ -142,17 +142,17 @@ const story = {
     },
     mage_revenge: {
         text: "Blinded by vengeance, you unleash destruction upon the world. Eventually, the kingdom hunts you down.",
-        image: "./images/dark_overlord.jpg",
+        image: "./images/blinded-mage.jpg",
         choices: [{ text: "Game Over", next: "restartGame" }]
     },
     mage_control_darkness: {
         text: "You learn to harness the dark magic without losing yourself, becoming a powerful protector of the balance.",
-        image: "./images/dark_guardian.jpg",
+        image: "./images/learn-darknes.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_learn_spell: {
         text: "You learn a powerful fire spell! But will you use it for good or evil?",
-        image: "./images/fire_spell.jpg",
+        image: "./images/fire-spell.jpg",
         choices: [
             { text: "Use for good", next: "mage_good" },
             { text: "Use for evil", next: "mage_evil" }
@@ -160,17 +160,17 @@ const story = {
     },
     mage_good: {
         text: "You become a legendary guardian of the land!",
-        image: "./images/mage_good.jpg",
+        image: "./images/legendar-guardian.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_evil: {
         text: "Your dark magic consumes you. Game over.",
-        image: "./images/mage_evil.jpg",
+        image: "./images/dying-mage.jpg",
         choices: [{ text: "Restart", next: "restartGame" }]
     },
     mage_altar: {
         text: "At the altar, you feel a strange energy. A spirit appears, offering you wisdom or power.",
-        image: "./images/altar.jpg",
+        image: "./images/altar-mage.jpg",
         choices: [
             { text: "Accept wisdom", next: "mage_wisdom" },
             { text: "Accept power", next: "mage_power" }
@@ -178,17 +178,17 @@ const story = {
     },
     mage_wisdom: {
         text: "You gain knowledge of the world's secrets, unlocking hidden paths in your journey.",
-        image: "./images/wisdom.jpg",
+        image: "./images/gain-knowledge.jpg",
         choices: [{ text: "Continue", next: "mage_prophecy" }]
     },
     mage_power: {
         text: "Dark energy courses through you, increasing your strength but corrupting your mind.",
-        image: "./images/dark_power.jpg",
+        image: "./images/dark-energy.jpg",
         choices: [{ text: "Continue", next: "mage_dark_path" }]
     },
     mage_prophecy: {
         text: "A vision of the future warns you of a great calamity. Will you act on it?",
-        image: "./images/prophecy.jpg",
+        image: "./images/vision-mage.jpg",
         choices: [
             { text: "Warn the kingdom", next: "mage_warn_kingdom" },
             { text: "Seek more knowledge", next: "mage_seeker" }
@@ -196,17 +196,17 @@ const story = {
     },
     mage_warn_kingdom: {
         text: "The kingdom heeds your warning and prepares for the disaster, crowning you as their advisor.",
-        image: "./images/kingdom.jpg",
+        image: "./images/kingdom-heeds.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_seeker: {
         text: "You travel the lands searching for deeper truths, uncovering lost civilizations.",
-        image: "./images/seeker.jpg",
+        image: "./images/travel-lands.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_dark_path: {
         text: "You grow in power, but your heart turns cold. Will you seek redemption or embrace the darkness?",
-        image: "./images/dark_path.jpg",
+        image: "./images/grow-in-power.jpg",
         choices: [
             { text: "Seek redemption", next: "mage_redemption" },
             { text: "Embrace darkness", next: "mage_overlord" }
@@ -214,18 +214,22 @@ const story = {
     },
     mage_redemption: {
         text: "You struggle to undo the harm you've done, becoming a hero of the fallen.",
-        image: "./images/redemption.jpg",
+        image: "./images/struggle-mage.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     mage_overlord: {
         text: "You conquer the lands, ruling with fear and might. The world is yours.",
-        image: "./images/overlord.jpg",
+        image: "./images/conquer.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
+// tapos page part
 
+
+
+// healer part
     healer_start: {
         text: "You are a noble healer. You find an injured knight and a sick villager. Who do you help first?",
-        image: "./images/healerchoice.webp",
+        image: "./images/healer_choice.jpg",
         choices: [
             { text: "Help the knight", next: "healer_knight" },
             { text: "Help the villager", next: "healer_villager" }
@@ -246,12 +250,12 @@ const story = {
     },
     healer_ritual: {
         text: "The ritual is successful! The villager is saved and gifts you a rare potion.",
-        image: "./images/healersuccess.webp",
+        image: "./images/success.jpg",
         choices: [{ text: "Continue", next: "healer_relic" }]
     },
     healer_knight: {
         text: "The knight is grateful and swears loyalty to you. He offers two paths: join him on a battle mission or focus on healing others.",
-        image: "./images/healerknight.webp",
+        image: "./images/knight.jpg",
         choices: [
             { text: "Join battle mission", next: "healer_battle" },
             { text: "Focus on healing", next: "healer_relic" }
@@ -259,12 +263,12 @@ const story = {
     },
     healer_battle: {
         text: "In battle, your healing saves many lives. You are honored as the royal healer!",
-        image: "./images/healervictory.webp",
+        image: "./images/victory.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     healer_relic: {
         text: "You discover an ancient relic! To unlock its power, you must solve a mystical riddle. Do you attempt it?",
-        image: "./images/healerrelic.jpg",
+        image: "./images/relic.jpg",
         choices: [
             { text: "Solve the riddle", next: "healer_riddle" },
             { text: "Ignore and move on", next: "healer_ignore" }
@@ -272,12 +276,12 @@ const story = {
     },
     healer_riddle: {
         text: "You solve the riddle and the relic grants you divine healing powers! You become a legendary healer.",
-        image: "./images/healerriddle.jpg",
+        image: "./images/legendary_healer.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     healer_ignore: {
         text: "Without unlocking its power, the relic fades. You continue your journey as a skilled but mortal healer.",
-        image: "./images/healerpath.jpg",
+        image: "./images/healer_path.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
 
