@@ -287,7 +287,7 @@ const story = {
 
     archer_start: {
         text: "You spot a mysterious figure in the forest. What do you do?",
-        image: "./images/archerstart.jpg",
+        image: "./images/archer in a forest.jpg",
         choices: [
             { text: "Follow", next: "archer_follow" },
             { text: "Hide", next: "archer_hide" },
@@ -296,7 +296,7 @@ const story = {
     },
     archer_follow: {
         text: "You find a rogue camp. Attack or negotiate?",
-        image: "./images/archerfollow.jpg",
+        image: "./images/archerfindacamp.jpg",
         choices: [
             { text: "Attack", next: "archer_attack" },
             { text: "Negotiate", next: "archer_negotiate" }
@@ -320,7 +320,7 @@ const story = {
     },
     archer_attack: {
         text: "You attack but are outnumbered. Fight or retreat?",
-        image: "./images/archerattack.jpg",
+        image: "./images/attackingacamparcher.jpg",
         choices: [
             { text: "Fight", next: "archer_heroic_death" },
             { text: "Retreat", next: "archer_retreat" }
