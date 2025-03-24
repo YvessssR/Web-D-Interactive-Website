@@ -328,7 +328,7 @@ const story = {
     },
     archer_heroic_death: {
         text: "You die bravely, remembered in songs.",
-        image: "./images/archerheroicdeath.jpg",
+        image: "./images/archerheroicdeath.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_retreat: {
