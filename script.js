@@ -333,7 +333,7 @@ const story = {
     },
     archer_retreat: {
         text: "You retreat and plan your next move.",
-        image: "./images/archerretreat.webo",
+        image: "./images/archerretreat.webp",
         choices: [
             { text: "Ambush", next: "archer_ambush" },
             { text: "Seek help", next: "archer_reinforcements" }
