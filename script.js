@@ -511,7 +511,7 @@ const story = {
     },
     archer_move_on: {
         text: "You continue your journey.",
-        image: "./images/archermoveon.jpg",
+        image: "./images/archermoveon.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     }
 };
