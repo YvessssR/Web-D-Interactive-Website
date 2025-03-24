@@ -328,12 +328,12 @@ const story = {
     },
     archer_heroic_death: {
         text: "You die bravely, remembered in songs.",
-        image: "./images/archerheroicdeath.jpg",
+        image: "./images/archerheroicdeath.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_retreat: {
         text: "You retreat and plan your next move.",
-        image: "./images/archerretreat.jpg",
+        image: "./images/archerretreat.webp",
         choices: [
             { text: "Ambush", next: "archer_ambush" },
             { text: "Seek help", next: "archer_reinforcements" }
@@ -341,17 +341,17 @@ const story = {
     },
     archer_ambush: {
         text: "You ambush the rogues and recover treasure.",
-        image: "./images/archerambush.jpg",
+        image: "./images/archerambush.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_reinforcements: {
         text: "You secure the area with reinforcements.",
-        image: "./images/archerreinforcements.jpg",
+        image: "./images/archerreinforcements.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_negotiate: {
         text: "You negotiate with the rogues for treasure.",
-        image: "./images/archernegotiate.jpg",
+        image: "./images/archernegotiate.webp",
         choices: [
             { text: "Accept deal", next: "archer_deal" },
             { text: "Betray", next: "archer_betray" }
@@ -359,12 +359,12 @@ const story = {
     },
     archer_deal: {
         text: "You gain info about a hidden artifact.",
-        image: "./images/archerdeal.jpg",
+        image: "./images/archerdeal.webp",
         choices: [{ text: "Search for artifact", next: "archer_artifact" }]
     },
     archer_betray: {
         text: "You betray the rogues, leading to a battle.",
-        image: "./images/archerbetray.jpg",
+        image: "./images/archerbetray.webp",
         choices: [
             { text: "Fight", next: "archer_heroic_death" },
             { text: "Flee", next: "archer_retreat" }
@@ -372,12 +372,12 @@ const story = {
     },
     archer_artifact: {
         text: "You find a powerful bow, becoming unstoppable.",
-        image: "./images/archerartifact.jpg",
+        image: "./images/archerartifact.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_steal: {
         text: "You steal the map but are chased. Fight or flee?",
-        image: "./images/archersteal.jpg",
+        image: "./images/archersteal.webp",
         choices: [
             { text: "Fight", next: "archer_fight_figure" },
             { text: "Flee", next: "archer_flee" }
@@ -385,7 +385,7 @@ const story = {
     },
     archer_fight_figure: {
         text: "You defeat the figure but damage the map.",
-        image: "./images/archerfightfigure.jpg",
+        image: "./images/archerfightfigure.webp",
         choices: [
             { text: "Follow map", next: "archer_follow_map" },
             { text: "Abandon", next: "archer_move_on" }
@@ -393,7 +393,7 @@ const story = {
     },
     archer_follow_map: {
         text: "The map leads to treasure guarded by a creature.",
-        image: "./images/archerfollowmap.jpg",
+        image: "./images/archerfollowmap.webp",
         choices: [
             { text: "Fight", next: "archer_fight_guardian" },
             { text: "Sneak past", next: "archer_sneak_past" }
@@ -401,12 +401,12 @@ const story = {
     },
     archer_fight_guardian: {
         text: "You defeat the guardian and claim the treasure.",
-        image: "./images/archerfightguardian.jpg",
+        image: "./images/archerfightguardian.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_sneak_past: {
         text: "You sneak past but awaken the guardian.",
-        image: "./images/archersneakpast.jpg",
+        image: "./images/archersneakpast.webp",
         choices: [
             { text: "Fight", next: "archer_fight_guardian" },
             { text: "Run", next: "archer_run" }
@@ -414,7 +414,7 @@ const story = {
     },
     archer_run: {
         text: "You escape but alert bandits.",
-        image: "./images/archerrun.jpg",
+        image: "./images/archerrun.webp",
         choices: [
             { text: "Fight", next: "archer_fight_bandits" },
             { text: "Hide", next: "archer_hide_from_bandits" }
@@ -422,7 +422,7 @@ const story = {
     },
     archer_fight_bandits: {
         text: "You defeat the bandits but are wounded.",
-        image: "./images/archerfightbandits.jpg",
+        image: "./images/archerfightbandits.webp",
         choices: [
             { text: "Seek healing", next: "archer_seek_healing" },
             { text: "Continue", next: "archer_wounded_journey" }
@@ -435,12 +435,12 @@ const story = {
     },
     archer_wounded_journey: {
         text: "You press on wounded, recovering slowly.",
-        image: "./images/archerwoundedjourney.jpg",
+        image: "./images/archerwoundedjourney.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_hide_from_bandits: {
         text: "You hide but are found. Fight or flee?",
-        image: "./images/archerhidefrombandits.jpg",
+        image: "./images/archerhidefrombandits.webp",
         choices: [
             { text: "Fight", next: "archer_fight_bandits" },
             { text: "Flee", next: "archer_flee_from_bandits" }
@@ -448,12 +448,12 @@ const story = {
     },
     archer_flee_from_bandits: {
         text: "You flee, losing the treasure but surviving.",
-        image: "./images/archerfleefrombandits.jpg",
+        image: "./images/archerfleefrombandits.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_report: {
         text: "You report to guards, but the figure escapes.",
-        image: "./images/archerreport.jpg",
+        image: "./images/archerreport.webp",
         choices: [
             { text: "Track", next: "archer_track" },
             { text: "Move on", next: "archer_move_on" }
@@ -461,7 +461,7 @@ const story = {
     },
     archer_track: {
         text: "You track the figure to their hideout. Confront or report?",
-        image: "./images/archertrack.jpg",
+        image: "./images/archertrack.webp",
         choices: [
             { text: "Confront", next: "archer_confront" },
             { text: "Report", next: "archer_report_guards" }
@@ -469,7 +469,7 @@ const story = {
     },
     archer_confront: {
         text: "You confront a rogue mage. Fight or negotiate?",
-        image: "./images/archerconfront.jpg",
+        image: "./images/archerconfront.webp",
         choices: [
             { text: "Fight", next: "archer_fight_mage" },
             { text: "Negotiate", next: "archer_negotiate_mage" }
@@ -477,7 +477,7 @@ const story = {
     },
     archer_fight_mage: {
         text: "You defeat the mage but are weakened.",
-        image: "./images/archerfightmage.jpg",
+        image: "./images/archerfightmage.webp",
         choices: [
             { text: "Seek healing", next: "archer_seek_healing" },
             { text: "Continue", next: "archer_wounded_journey" }
@@ -485,7 +485,7 @@ const story = {
     },
     archer_negotiate_mage: {
         text: "The mage offers an artifact for your silence.",
-        image: "./images/archernegotiatemage.jpg",
+        image: "./images/archernegotiatemage.webp",
         choices: [
             { text: "Accept", next: "archer_artifact" },
             { text: "Refuse", next: "archer_refuse_mage" }
@@ -501,17 +501,17 @@ const story = {
     },
     archer_report_guards: {
         text: "You report the hideout, and the guards raid it.",
-        image: "./images/archerreportguards.jpg",
+        image: "./images/archerreportguards.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_help_elf: {
         text: "You help the elf and are rewarded with a magical bow.",
-        image: "./images/archerhelpelf.jpg",
+        image: "./images/archerhelp.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     archer_move_on: {
         text: "You continue your journey.",
-        image: "./images/archermoveon.jpg",
+        image: "./images/archermoveon.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     }
 };
