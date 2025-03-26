@@ -7,7 +7,7 @@ const storyImage = document.getElementById("story-image");
 // Start screen with class selection
 function showClassSelection() {
     storyText.innerText = "Choose your class:";
-    storyImage.src = "images/class_selection.jpg"; // Add an image for class selection
+    storyImage.src = "./images/mainimage.jpg"; // Add an image for class selection
     choicesDiv.innerHTML = "";
 
     const classes = ["Warrior", "Mage", "Healer", "Archer"];
@@ -229,7 +229,7 @@ const story = {
 // healer part
     healer_start: {
         text: "You are a noble healer. You find an injured knight and a sick villager. Who do you help first?",
-        image: "./images/healer_choice.jpg",
+        image: "./images/healerchoice.webp",
         choices: [
             { text: "Help the knight", next: "healer_knight" },
             { text: "Help the villager", next: "healer_villager" }
@@ -250,12 +250,12 @@ const story = {
     },
     healer_ritual: {
         text: "The ritual is successful! The villager is saved and gifts you a rare potion.",
-        image: "./images/success.jpg",
+        image: "./images/healersuccess.webp",
         choices: [{ text: "Continue", next: "healer_relic" }]
     },
     healer_knight: {
         text: "The knight is grateful and swears loyalty to you. He offers two paths: join him on a battle mission or focus on healing others.",
-        image: "./images/knight.jpg",
+        image: "./images/healerknight.webp",
         choices: [
             { text: "Join battle mission", next: "healer_battle" },
             { text: "Focus on healing", next: "healer_relic" }
@@ -263,12 +263,12 @@ const story = {
     },
     healer_battle: {
         text: "In battle, your healing saves many lives. You are honored as the royal healer!",
-        image: "./images/victory.jpg",
+        image: "./images/healervictory.webp",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     healer_relic: {
         text: "You discover an ancient relic! To unlock its power, you must solve a mystical riddle. Do you attempt it?",
-        image: "./images/relic.jpg",
+        image: "./images/healerrelic.jpg",
         choices: [
             { text: "Solve the riddle", next: "healer_riddle" },
             { text: "Ignore and move on", next: "healer_ignore" }
@@ -276,12 +276,12 @@ const story = {
     },
     healer_riddle: {
         text: "You solve the riddle and the relic grants you divine healing powers! You become a legendary healer.",
-        image: "./images/legendary_healer.jpg",
+        image: "./images/legendar-guardian.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
     healer_ignore: {
         text: "Without unlocking its power, the relic fades. You continue your journey as a skilled but mortal healer.",
-        image: "./images/healer_path.jpg",
+        image: "./images/healerpath.jpg",
         choices: [{ text: "Start New Game", next: "restartGame" }]
     },
 
